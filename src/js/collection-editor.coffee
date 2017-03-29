@@ -45,7 +45,8 @@ build_input_for_property = (property) ->
       pagedown_container = $('<div>').attr('class','pagedown_container')
       pagedown_suffix = $('<input>').attr('type','hidden').attr('class','pagedown_suffix').attr('value',$(property).attr('name'))
       pagedown_panel = $('<div>').attr('class','wmd-panel')
-      pagedown_panel.append $('<div>').attr('id',"wmd-button-bar-#{$(property).attr('name')}")
+      # pagedown_panel.append $('<div>').attr('id',"wmd-button-bar-#{$(property).attr('name')}")
+      pagedown_panel.append $('<div>[<a href="https://github.com/dcthree/photios/wiki/Markdown-Syntax" target="syntax">Link Syntax</a>]</div>')
       pagedown_panel.append $('<textarea>').attr('class','wmd-input').attr('id',"wmd-input-#{$(property).attr('name')}").change(enable_submit)
       pagedown_preview = $('<div>').attr('class','wmd-panel wmd-preview').attr('id',"wmd-preview-#{$(property).attr('name')}")
       pagedown_container.append pagedown_suffix
@@ -284,7 +285,7 @@ check_table_access = (table_id, callback) ->
 # top-level function for building the collection form
 build_collection_form = (collection) ->
   form = $('<form>').attr('id','collection_form')
-  
+
   form.append $('<input>').attr('type','hidden').attr('id','namespaceMapping').attr('value',$(collection).find('namespaceMapping').attr('abbr'))
   form.append $('<input>').attr('type','hidden').attr('id','collection_name').attr('value',$(collection).attr('name'))
   form.append $('<input>').attr('type','hidden').attr('id','urn_object_prefix').attr('value',$(collection).find("citeProperty[name='#{$(collection).attr('canonicalId')}']").attr('objectPrefix'))
@@ -375,7 +376,7 @@ parse_query_string = (query_string) ->
       params[decodeURIComponent(m[1])] = decodeURIComponent(m[2])
   return params
 
-# filter URL parameters out of the window URL using replaceState 
+# filter URL parameters out of the window URL using replaceState
 # returns the original parameters
 filter_url_params = (params, filtered_params) ->
   rewritten_params = []
@@ -489,7 +490,7 @@ build_collection_editor_from_capabilities = (capabilities_url) ->
       window.onpopstate = (event) ->
         $('#collection_select').chosen()
         set_selected_collection_from_hash_parameters()
- 
+
       $('#collection_select').chosen()
       $('#collection_select').bind 'change', (event) =>
         $('#collection_select').trigger("liszt:updated")
@@ -513,17 +514,17 @@ merge_config_parameters = ->
 
   cite_collection_editor_config = $.extend({}, default_cite_collection_editor_config, window.cite_collection_editor_config)
   google_oauth_parameters_for_fusion_tables['client_id'] = cite_collection_editor_config['google_client_id']
-  
+
   if location.hash.substring(1).length && !(parse_query_string()['state'])
      console.log "Setting OAuth URL parameter state: #{location.hash.substring(1)}"
      google_oauth_parameters_for_fusion_tables['state'] = location.hash.substring(1)
-  
+
   return cite_collection_editor_config
 
 # main collection editor entry point
 $(document).ready ->
   unless $('#qunit').length
     cite_collection_editor_config = merge_config_parameters()
-    
+
     set_access_token_cookie filter_url_params(parse_query_string()), =>
       build_collection_editor_from_capabilities cite_collection_editor_config['capabilities_url']

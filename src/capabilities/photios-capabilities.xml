@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="CiteCollection.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<collectionService xmlns="http://chs.harvard.edu/xmlns/cite">
+        <citeCollection
+            canonicalId="URN"
+            class="1q_OAsgFRRKaV-D0CURogol5V_oda700vZ3FmnhU5"
+            name="photios"
+            description="Photios: Lexicon">
+            <namespaceMapping
+                abbr="dc3"
+                fullValue="http://www.homermultitext.org/datans"/>
+            <citeProperty
+                label="URN"
+                name="URN"
+                type="citeurn"/>
+            <!-- maps to Google String -->
+            <citeProperty
+                label="URN of text commented on"
+                name="URN-commentedOn"
+                type="citeurn"/>
+            <citeProperty
+                label="Author"
+                name="Author"
+                type="authuser"/>
+            <citeProperty
+                label="Text"
+                name="Text"
+                type="string"/>
+            <citeProperty
+                label="Translation"
+                name="Translation"
+                type="markdown"/>
+            <citeProperty
+                label="Notes"
+                name="Notes"
+                type="markdown"/>
+            <!-- maps to Google String -->
+            <citeProperty
+                label="Date"
+                name="Date"
+                type="timestamp"/>
+        </citeCollection>
+    </collectionService>
