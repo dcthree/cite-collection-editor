@@ -4,7 +4,7 @@
 <collectionService xmlns="http://chs.harvard.edu/xmlns/cite">
         <citeCollection
             canonicalId="URN"
-            class="1q_OAsgFRRKaV-D0CURogol5V_oda700vZ3FmnhU5"
+            class="1Tv86Sn9h4CGug3I_Bp20yNT1wT4Ad2Ufp93zUiQP"
             name="photios"
             description="Photios: Lexicon">
             <namespaceMapping
@@ -23,6 +23,10 @@
                 label="Author"
                 name="Author"
                 type="authuser"/>
+            <citeProperty
+                label="Translated By"
+                name="TranslatedBy"
+                type="string"/>
             <citeProperty
                 label="Text"
                 name="Text"
