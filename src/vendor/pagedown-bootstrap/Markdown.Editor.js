@@ -1325,11 +1325,11 @@
 
         function makeSpritedButtonRow() {
 
-            # var buttonBar = panels.buttonBar;
+            // var buttonBar = panels.buttonBar;
             var buttonRow = document.createElement("div");
             buttonRow.id = "wmd-button-row" + postfix;
             buttonRow.className = 'btn-toolbar';
-            # buttonRow = buttonBar.appendChild(buttonRow);
+            // buttonRow = buttonBar.appendChild(buttonRow);
 
             var makeButton = function (id, title, icon, textOp, group) {
                 var button = document.createElement("button");
