@@ -447,8 +447,8 @@ clippy = (id) ->
     scale: 'noscale'
   objectattrs =
     classid: 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'
-    style: "padding-left:5px;padding-top:5px;background-position:5px 5px;background-repeat:no-repeat;background-image:url('vendor/clippy/button_up.png')"
-  swfobject.embedSWF("vendor/clippy/clippy.swf", "#{id}-clippy", "110", "14", "9", false, flashvars, flashparams, objectattrs)
+    style: "padding-left:5px;padding-top:5px;background-position:5px 5px;background-repeat:no-repeat;background-image:url('src/vendor/clippy/button_up.png')"
+  swfobject.embedSWF("src/vendor/clippy/clippy.swf", "#{id}-clippy", "110", "14", "9", false, flashvars, flashparams, objectattrs)
 
 # use hash parameters to set the selected collection
 set_selected_collection_from_hash_parameters = ->
