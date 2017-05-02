@@ -39,6 +39,10 @@
                 label="Notes"
                 name="Notes"
                 type="markdown"/>
+            <citeProperty
+                label="Peer Review Status (One of: 'Not Peer Reviewed', 'Peer Reviewed, superseded', or 'Peer Reviewed')"
+                name="VettingStatus"
+                type="string"/>
             <!-- maps to Google String -->
             <citeProperty
                 label="Date"

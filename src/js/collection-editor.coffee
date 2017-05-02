@@ -1,3 +1,6 @@
+---
+---
+
 FUSION_TABLES_URI = 'https://www.googleapis.com/fusiontables/v2'
 
 default_cite_collection_editor_config =

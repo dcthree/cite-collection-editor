@@ -1,0 +1,3 @@
+source: src
+gems:
+  - jekyll-coffeescript
